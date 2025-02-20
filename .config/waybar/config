@@ -1,0 +1,123 @@
+{
+	"enable-bar-scroll": "true",
+
+		// "layer": "top", // Waybar at top layer
+		// "position": "bottom", // Waybar position (top|bottom|left|right)
+		"height": 24, // Waybar height (to be removed for auto height)
+		// "width": 1280, // Waybar width
+		// Choose the order of the modules
+		// "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
+		"modules-left": ["sway/workspaces", "sway/mode"],
+		//"modules-center": ["sway/window"],
+		"modules-center": [
+			"clock",
+		],
+		"modules-right": [
+			"network#wifi",
+			"network#lan",
+			"idle_inhibitor",
+			"pulseaudio",
+			//"cpu",
+			//"memory",
+			//"backlight",
+			"battery",
+			"tray" ],
+			// Modules configuration
+			// "sway/workspaces": {
+			//     "disable-scroll": true,
+			//     "all-outputs": true,
+			//     "format": "{name}: {icon}",
+			//     "format-icons": {
+			//         "1": "",
+			//         "2": "",
+			//         "3": "",
+			//         "4": "",
+			//         "5": "",
+			//         "urgent": "",
+			//         "focused": "",
+			//         "default": ""
+			//     }
+			// },
+			"sway/mode": {
+				"format": "<span style=\"italic\">{}</span>"
+			},
+			"idle_inhibitor": {
+				"format": "{icon}",
+				"format-icons": {
+					"activated": "",
+					"deactivated": ""
+				}
+			},
+			"tray": {
+				// "icon-size": 21,
+				"spacing": 10
+			},
+			"clock": {
+				// "timezone": "America/New_York",
+				// "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+				"format": "{:%d.%m.%Y %H:%M}",
+				"format-alt": "Hello World!",
+			},
+			"cpu": {
+				"format": "{usage}% ",
+				"tooltip": false
+			},
+			"memory": {
+				"format": "{used:0.1f}G/{total:0.1f}G "
+			},
+			"backlight": {
+				// "device": "acpi_video1",
+				"format": "{percent}% {icon}",
+				"format-icons": ["", ""]
+			},
+			"battery": {
+				"states": {
+					// "good": 95,
+					"warning": 30,
+					"critical": 15
+				},
+				"format": "{capacity}% {icon}",
+				"format-charging": "{capacity}% ",
+				"format-plugged": "{capacity}% ",
+				"format-alt": "{time} {icon}",
+				// "format-good": "", // An empty format will hide the module
+				// "format-full": "",
+				"format-icons": ["", "", "", "", ""]
+			},
+			"network#wifi": {
+				"interface": "wifi", // (Optional) To force the use of this interface
+				"format-wifi": "{ifname}: {essid} ({signalStrength}%) ",
+				"format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+				"format-linked": "{ifname} (No IP) ",
+				"format-disconnected": "{ifname}: X ⚠",
+				"format-alt": "{ifname}: {ipaddr}/{cidr}"
+			},
+			"network#lan": {
+				"interface": "lan-tb", // (Optional) To force the use of this interface
+				"format-wifi": "lan: {essid} ({signalStrength}%) ",
+				"format-ethernet": "lan: {ipaddr}/{cidr} ",
+				"format-linked": "lan: (No IP) ",
+				"format-disconnected": "lan: X ⚠",
+				"format-alt": "lan: {ipaddr}/{cidr}"
+			},
+			"pulseaudio": {
+				// "scroll-step": 1, // %, can be a float
+				"format": "{volume}% {icon} {format_source}",
+				"format-bluetooth": "{volume}% {icon} {format_source}",
+				"format-bluetooth-muted": " {icon} {format_source}",
+				"format-muted": " {format_source}",
+				"format-source": "{volume}% ",
+				"format-source-muted": "",
+				"format-icons": {
+					"headphone": "",
+					"hands-free": "",
+					"headset": "",
+					"phone": "",
+					"portable": "",
+					"car": "",
+					"default": ["", "", ""]
+				},
+				"on-click": "pavucontrol"
+			}
+}
+

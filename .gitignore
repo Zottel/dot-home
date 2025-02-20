@@ -1,0 +1,23 @@
+# Ignore everything by default.
+*
+# We explicitly list all paths and files we do not ignore below.
+
+# Basic environment configs:
+!.profile
+!.bashrc
+!.gitignore
+
+# Application configs we need:
+!.config
+!.config/environment.d
+!.config/environment.d/*
+!.config/htop
+!.config/htop/*
+!.config/kitty
+!.config/kitty/*
+!.config/nvim
+!.config/nvim/*
+!.config/sway
+!.config/sway/*
+!.config/waybar
+!.config/waybar/*
