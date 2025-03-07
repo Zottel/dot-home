@@ -3,9 +3,10 @@
 # We explicitly list all paths and files we do not ignore below.
 
 # Basic environment configs:
+!.gitignore
 !.profile
 !.bashrc
-!.gitignore
+!.dircolors
 
 # Application configs we need:
 !.config

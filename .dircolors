@@ -1,0 +1,29 @@
+NORMAL   0
+
+FILE     0
+
+DIR      04
+
+#Symbolic link
+LINK     34
+
+#undefined Orphaned symbolic link
+ORPHAN   31
+
+#MISSING  undefined Missing file
+
+#Named pipe (FIFO)
+#FIFO     31
+
+#Socket
+#SOCK     33
+
+#Block device
+#BLK      44;37
+
+#Character device
+#CHR      44;37
+
+#Executable file
+EXEC     32
+
